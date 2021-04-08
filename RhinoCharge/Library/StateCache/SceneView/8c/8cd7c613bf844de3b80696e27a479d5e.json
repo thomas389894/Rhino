@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":684.654052734375,"y":243.59768676757813,"z":-82.94477081298828},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":318.6184387207031,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-0.6510635614395142,"y":0.10183747857809067,"z":-0.04499997943639755},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":10.449999809265137,"orthographic":true}
+>>>>>>> RhinoTest
