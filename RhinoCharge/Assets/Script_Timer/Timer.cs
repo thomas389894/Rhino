@@ -11,7 +11,9 @@ public class Timer : MonoBehaviour
 
     float seconds = 10;
     float miliseconds = 0;
+    float AddTime;
 
+    
     [SerializeField] public Scene currentscene;
     [SerializeField] public string difficulty = "Normal";
     public string Levelname;
@@ -22,6 +24,7 @@ public class Timer : MonoBehaviour
     {
         currentTime = seconds + miliseconds;
         Levelname = currentscene.name;
+        
     }
 
     // Update is called once per frame
@@ -46,16 +49,23 @@ public class Timer : MonoBehaviour
         //Debug.Log(string.Format("{0}:{1}:{2}", minutes, seconds, (int)miliseconds));
         countdownText.text = string.Format("{0}:{1}", seconds, (int)miliseconds);
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I)/* if niveau fini alors ajouter du temps au compteur*/)
         {
-            //currentscene == ;
             AddTimerLevel();
+            if (currentTime <=2)
+            {
+                difficulty = "Facile";
+            }
+            if (currentTime <= 5)
+            {
+                difficulty = "Normal";
+            }
+            if (currentTime > 6)
+            {
+                difficulty = "Difficile";
+            }
         }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            //currentscene = ref Object.Equals;
-            AddTimerLevel();
-        }
+        
     }
     public void AddTimerLevel()
     {
@@ -63,7 +73,8 @@ public class Timer : MonoBehaviour
         {
             if (difficulty == "Facile")
             {
-                seconds += 12;
+                AddTime = 5;
+                currentTime += AddTime;
             }
             if (difficulty == "Normal")
             {

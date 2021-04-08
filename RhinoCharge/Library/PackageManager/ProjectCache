@@ -13,11 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-      ticks: 637535121701223197
-=======
-      ticks: 637535122960004699
->>>>>>> RhinoDeplacement
+      ticks: 637535131389491465
     m_Hash: 157013556
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
