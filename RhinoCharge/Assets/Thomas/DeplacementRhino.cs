@@ -5,9 +5,9 @@ using UnityEngine;
 public class DeplacementRhino : MonoBehaviour
 {
 
-    public Rigidbody2D rb;
-    public float speed = 2f;
-    public Vector2 movement;
+    public Rigidbody rb;
+    public float speed = 10f;
+    public Vector3 movement;
     public bool push;
     public float speedMax = 15;
     public float speedMin = 0;
@@ -57,7 +57,10 @@ public class DeplacementRhino : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-       // rb.velocity(movement.x,movement.y);
+        Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        //Apply the movement vector to the current position, which is
+        //multiplied by deltaTime and speed for a smooth MovePosition
+        rb.AddForce(m_Input  * speed * Time.deltaTime);
     }
 }
