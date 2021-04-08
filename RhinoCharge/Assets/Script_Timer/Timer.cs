@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -11,14 +12,16 @@ public class Timer : MonoBehaviour
     float seconds = 10;
     float miliseconds = 0;
 
-    string currentlevel = "Level_1"; 
-
+    [SerializeField] public Scene currentscene;
+    [SerializeField] public string difficulty = "Normal";
+    public string Levelname;
     [SerializeField] Text countdownText;
 
     // Start is called before the first frame update
     void Start()
     {
         currentTime = seconds + miliseconds;
+        Levelname = currentscene.name;
     }
 
     // Update is called once per frame
@@ -45,22 +48,34 @@ public class Timer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            currentlevel = "Level_2";
+            //currentscene == ;
             AddTimerLevel();
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
-            currentlevel = "Level_3";
+            //currentscene = ref Object.Equals;
             AddTimerLevel();
         }
     }
     public void AddTimerLevel()
     {
-        if (currentlevel == "Level_2")
+        if (Levelname == "Level_1")
         {
-            seconds += 10;
+            if (difficulty == "Facile")
+            {
+                seconds += 12;
+            }
+            if (difficulty == "Normal")
+            {
+                seconds += 10;
+            }
+            if (difficulty == "Difficile")
+            {
+                seconds += 5;
+            }
         }
-        if (currentlevel == "Level_3")
+        
+        if (Levelname == "Level_2")
         {
             seconds += 5;
         }
@@ -68,5 +83,9 @@ public class Timer : MonoBehaviour
         {
             seconds += 3;
         }
+    }
+    public void BonusTime()
+    {
+        
     }
 }
