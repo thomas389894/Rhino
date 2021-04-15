@@ -5,59 +5,96 @@ using UnityEngine;
 public class DeplacementRhino : MonoBehaviour
 {
 
-    public Rigidbody2D rb;
-    public float speed = 2f;
-    public Vector2 movement;
-    public bool push;
-    public float speedMax = 15;
-    public float speedMin = 0;
-
-    // Start is called before the first frame update
+    private Rigidbody2D player;
+    public float speed = 6.0f;
+    public float Ypos = 1;
+    public float Xpos= 1;
+    public float Yneg = -1;
+    public float Xneg = -1;
+    public float DirX;
+    public float DirY;
+    public bool canMove = true;
     void Start()
     {
-        
+        player = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-       movement.x = Input.GetAxisRaw("Horizontal");
-       movement.y = Input.GetAxisRaw("Vertical");
-
-       if (movement.x != 0 || movement.y != 0)
+       if (Input.GetKeyDown(KeyCode.Z) && canMove == true)
         {
-            push = true;
-        }
-       else
-        {
-            push = false;
+            DirY = Ypos;
+            DirX = 0;
+            canMove = false;
         }
 
-       if (push == true)
+        if (Input.GetKeyDown(KeyCode.S) && canMove == true)
         {
-            speed++;
-        }
-       else
-        {
-            speed--;
+            DirY = Yneg;
+            DirX = 0;
+            canMove = false;
         }
 
-       if (push == false && speed <= speedMin)
+        if (Input.GetKeyDown(KeyCode.Q) && canMove == true)
         {
-            speed = speedMin;
+            DirX = Xneg;
+            DirY = 0;
+            canMove = false;
         }
 
-       if (push == true && speed >= speedMax)
+        if (Input.GetKeyDown(KeyCode.D) && canMove == true)
         {
-            speed = speedMax;
-            Debug.Log("TooFast");
+            DirX = Xpos;
+            DirY = 0;
+            canMove = false;
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.D) && (Input.GetKeyDown(KeyCode.Z)) && canMove == true)
+        {
+            DirX = Xpos;
+            DirY = Ypos;
+            canMove = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && (Input.GetKeyDown(KeyCode.Z)) && canMove == true)
+        {
+            DirX = Xneg;
+            DirY = Ypos;
+            canMove = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D) && (Input.GetKeyDown(KeyCode.S)) && canMove == true)
+        {
+            DirX = Xpos;
+            DirY = Yneg;
+            canMove = false;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Q) && (Input.GetKeyUp(KeyCode.S)) && canMove == true)
+        {
+            DirX = Xneg;
+            DirY = Yneg;
+            canMove = false;
+        }
+
+
+
+
+
+
+
+        Vector2 direction = new Vector2(DirX, DirY) * speed;
+        player.AddForce(direction, ForceMode2D.Force);
     }
 
-    void FixedUpdate()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-       // rb.velocity(movement.x,movement.y);
+        if (collision.gameObject.tag == "Wall")
+        {
+            player.velocity = Vector2.zero;
+            canMove = true;
+        }
     }
+
 }
