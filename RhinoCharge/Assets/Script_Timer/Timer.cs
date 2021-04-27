@@ -6,27 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+
+    /* var theGameObject : GameObject = GameObject.Find(targetObject);
+        var theComponent : TargetScript = theGameObject.GetComponent(TargetScript );
+         var theVarThatIsAnInt : int = theComponent.theVariableOnTargetScriptThatIsAnInt;*/
+
     float currentTime = 0f;
     float startingTime = 10f;
 
     float seconds = 10;
     float miliseconds = 0;
     float AddTime;
+    int levelEasy;
 
-    
+
     [SerializeField] public Scene currentscene;
     [SerializeField] public string difficulty = "Normal";
     public string Levelname;
     [SerializeField] Text countdownText;
+
 
     // Start is called before the first frame update
     void Start()
     {
         currentTime = seconds + miliseconds;
         Levelname = currentscene.name;
-        
+        //levelEasy = GameObject.FindGameObject<Map_Manager>();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -65,38 +71,44 @@ public class Timer : MonoBehaviour
                 difficulty = "Difficile";
             }
         }
-        
+        OverTime();
     }
     public void AddTimerLevel()
     {
-        if (Levelname == "Level_1")
+        if (difficulty == "Facile")
         {
-            if (difficulty == "Facile")
-            {
-                AddTime = 5;
-                currentTime += AddTime;
-            }
-            if (difficulty == "Normal")
-            {
-                seconds += 10;
-            }
-            if (difficulty == "Difficile")
-            {
-                seconds += 5;
-            }
+            AddTime = 6;
+            currentTime += AddTime;
         }
-        
-        if (Levelname == "Level_2")
+        if (difficulty == "Normal")
         {
-            seconds += 5;
+            AddTime = 3;
+            currentTime += AddTime;
         }
-        else
+        if (difficulty == "Difficile")
         {
-            seconds += 3;
+            AddTime = 2;
+            currentTime += AddTime;
         }
     }
     public void BonusTime()
     {
         
+    }
+    public void OverTime()
+    {
+        if (seconds <= 0 && miliseconds <= 0)
+        {
+            countdownText.text = string.Format("Game Over !");
+            Debug.Log("Game Over !");
+        }
+        else
+        {
+            Debug.Log("Play");
+        }
+    }
+    public void Levelcomplit()
+    {
+        if ()
     }
 }
