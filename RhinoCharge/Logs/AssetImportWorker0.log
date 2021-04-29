@@ -15,11 +15,19 @@ D:/Rhino/Rhino/RhinoCharge
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 50467
 Successfully changed project path to: D:/Rhino/Rhino/RhinoCharge
 D:/Rhino/Rhino/RhinoCharge
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 33.09 ms, found 1 plugins.
+=======
+57607
+Successfully changed project path to: D:/DL/GitKraken/Rhino/RhinoCharge
+D:/DL/GitKraken/Rhino/RhinoCharge
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 65.03 ms, found 1 plugins.
+>>>>>>> RhinoDeplacement
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
@@ -29,12 +37,17 @@ Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
     Vendor:   
+<<<<<<< HEAD
     VRAM:     5991 MB
     Driver:   27.21.14.5167
+=======
+    VRAM:     3962 MB
+>>>>>>> RhinoDeplacement
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56948
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -42,11 +55,21 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/E
 Registered in 0.003127 seconds.
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 33.77 ms, found 1 plugins.
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56264
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.008292 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 47.01 ms, found 1 plugins.
+>>>>>>> RhinoDeplacement
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  2.756 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
@@ -120,3 +143,9 @@ Start importing Assets/Script/Monster/Ennemy_Manager.cs using Guid(010e2aa9ef0f8
   Import took 0.049596 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+=======
+- Completed reload, in  6.128 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001206 seconds.
+>>>>>>> RhinoDeplacement
