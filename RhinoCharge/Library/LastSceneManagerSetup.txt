@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Script_Timer/Timer.unity
+- path: Assets/Main_Menu/Menu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
